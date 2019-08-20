@@ -2,7 +2,7 @@ require_relative '../../features/pages/base'
 # Login page class
 class LoginPage < BasePage
   attr_accessor :email, :password, :loginButton, :skipButton, :homeButton, :friendsTab, :friendTag, :voiceCallButton
-  attr_accessor :chatMessageInput, :leaveCallButton, :userSettings, :logOutButton
+  attr_accessor :chatMessageInput, :leaveCallButton, :userSettings, :logOutButton, :logOutConfirm, :editButton, :cancelButton
 
   def initialize
 
@@ -23,5 +23,8 @@ class LoginPage < BasePage
 
   def load_home_page
     visit ''
+    @email.visible?
+    @password.visible?
+    @loginButton.visible?
   end
 end
